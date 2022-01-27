@@ -1,0 +1,62 @@
+<div class="content">
+    <div class="welcome">
+        <span>Welcome {{loggedUser.username}}</span>
+    </div>
+    <div class="table-cont">
+            <table mat-table [dataSource]="events" class="mat-elevation-z8 demo-table table">
+                    <ng-container matColumnDef="Genre">
+                    <th mat-header-cell *matHeaderCellDef>Genre</th>
+                    <td mat-cell *matCellDef="let element">{{element.genre}}</td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="Title">
+                    <th mat-header-cell *matHeaderCellDef>Title</th>
+                    <td mat-cell *matCellDef="let element">{{element.title}}</td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="ticketNum">
+                    <th mat-header-cell *matHeaderCellDef>Tickets</th>
+                    <td mat-cell *matCellDef="let element">{{element.ticketNum}}</td>
+                    </ng-container>
+                
+                    <ng-container matColumnDef="startTime">
+                    <th mat-header-cell *matHeaderCellDef>Start Time</th>
+                    <td mat-cell *matCellDef="let element">{{element.startTime}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="edit">
+                        <th mat-header-cell *matHeaderCellDef>Edit</th>
+                        <td mat-cell *matCellDef="let element" (click) = "editEvent(element,3)">
+                            <mat-icon>
+                                edit
+                            </mat-icon>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="delete">
+                        <th mat-header-cell *matHeaderCellDef>Delete</th>
+                        <td mat-cell *matCellDef="let element" (click) = "deleteEvent(element)">
+                            <mat-icon>
+                                delete
+                            </mat-icon>
+                        </td>
+                    </ng-container>
+                
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+
+            <button mat-raised-button (click) = "addEvent(0)" class = "add-button">
+                Add Event
+            </button>
+    </div>
+
+
+    <div class="navigation" (click) = "logout()">
+        <a class="logout-button" href="">
+            <img src="https://media.istockphoto.com/vectors/avatar-builder-outline-icon-in-blue-neon-style-signs-and-symbols-can-vector-id1168007943?k=20&m=1168007943&s=612x612&w=0&h=cXuSUuDm1VT-R1cLydiDic7zkg8HywOLNRM7vKwYt4s=" alt="">
+        </a>
+        <div class="logout">LOGOUT</div>
+
+    </div>
+</div>

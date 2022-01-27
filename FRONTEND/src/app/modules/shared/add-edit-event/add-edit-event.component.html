@@ -1,0 +1,44 @@
+<div class="container">
+
+    <h1 class = "title">
+        {{titlu}}
+    </h1>
+
+    <form [formGroup] = "eventForm" class = "form">
+        <mat-form-field appearance = "outline">
+            <mat-label>Title</mat-label>
+            <input matInput placeholder = "Title" formControlName = "title"/>
+        </mat-form-field>
+
+        <mat-form-field appearance = "outline">
+            <mat-label>Genre</mat-label>
+            <input matInput placeholder = "Genre" formControlName = "genre"/>
+        </mat-form-field>
+
+        <mat-form-field appearance = "outline">
+            <mat-label>StartTime</mat-label>
+            <input matInput placeholder = "StartTime" formControlName = "startTime"/>
+        </mat-form-field>
+
+        <mat-form-field appearance = "outline">
+            <mat-label>Ticket amount</mat-label>
+            <input matInput placeholder = "TicketNum" formControlName = "ticketNum"/>
+        </mat-form-field>
+
+        <mat-form-field appearance = "outline">
+            <mat-label>Status</mat-label>
+            <input matInput placeholder = "Status" formControlName = "Status"/>
+        </mat-form-field>
+    </form>
+        <div *ngIf = "!(data.opt === 3)">
+            <button mat-raised-button (click) = "addEvent()">
+                Add
+            </button>
+        </div>
+
+        <div *ngIf="data.opt === 3">
+            <button mat-raised-button (click) = "editEvent()">
+                Save
+            </button>
+        </div>
+    </div>

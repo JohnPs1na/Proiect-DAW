@@ -1,0 +1,26 @@
+<div class="background">
+    <div class="shape" ></div>
+    <div class="shape"></div>
+</div>
+<form [formGroup] = "registerForm">
+    <h3>Register Here</h3>
+
+    <label for="username">Email</label>
+    <input type="text" placeholder="Email" formControlName = "email" id="email">
+
+    <label for="username">Username</label>
+    <input type="text" placeholder="Username" formControlName = "username" id="username">
+
+    <label for="password">Password</label>
+    <input type="password" placeholder="Password" formControlName = "password" id="password">
+
+    <!-- (click) = "signup()" -->
+    <button mat-raised-button (click) = "signup()">
+        Signup 
+    </button>
+    <div class="social">
+      <div class="go"><i class="fab fa-google"></i>  Google</div>
+      <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+    </div>
+
+</form>
